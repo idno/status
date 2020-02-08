@@ -1,3 +1,11 @@
+#: ./ContentType.php:8
+msgid "Status update"
+msgstr ""
+
+#: ./ContentType.php:9
+msgid "Status updates"
+msgstr ""
+
 #: ./Pages/Delete.php:29
 msgid "Delete %s"
 msgstr ""
