@@ -101,13 +101,18 @@ namespace IdnoPlugins\Status {
 
             if (!empty($body) || ('0' === $body)) {
                 $this->body      = $body;
-                $this->inreplyto = $inreplyto;
                 $this->tags      = $tags;
+                
                 // TODO fetch syndicated reply targets asynchronously (or maybe on-demand, when syndicating?)
                 if (!empty($inreplyto)) {
+                    
+                    $this->inreplyto = $inreplyto;
+                    
                     if (is_array($inreplyto)) {
                         foreach ($inreplyto as $inreplytourl) {
-                            $this->syndicatedto = \Idno\Core\Webmention::addSyndicatedReplyTargets($inreplytourl, $this->syndicatedto);
+                            if (!empty($inreplytourl)) {
+                                $this->syndicatedto = \Idno\Core\Webmention::addSyndicatedReplyTargets($inreplytourl, $this->syndicatedto);
+                            }
                         }
                     } else {
                         $this->syndicatedto = \Idno\Core\Webmention::addSyndicatedReplyTargets($inreplyto);
