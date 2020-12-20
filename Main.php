@@ -8,7 +8,7 @@ namespace IdnoPlugins\Status {
         function registerPages()
         {
             \Idno\Core\Idno::site()->routes()->addRoute('/status/edit/?', '\IdnoPlugins\Status\Pages\Edit');
-            \Idno\Core\Idno::site()->routes()->addRoute('/status/edit/([A-Za-z0-9]+)/?', '\IdnoPlugins\Status\Pages\Edit');
+            \Idno\Core\Idno::site()->routes()->addRoute('/status/edit/([A-Za-z0-9\-]+)/?', '\IdnoPlugins\Status\Pages\Edit');
             \Idno\Core\Idno::site()->routes()->addRoute('/reply/edit/?', '\IdnoPlugins\Status\Pages\Edit');
             \Idno\Core\Idno::site()->routes()->addRoute('/reply/edit/([A-Za-z0-9\-]+)/?', '\IdnoPlugins\Status\Pages\Edit');
             \Idno\Core\Idno::site()->routes()->addRoute('/status/delete/([A-Za-z0-9\-]+)/?', '\IdnoPlugins\Status\Pages\Delete');
